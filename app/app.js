@@ -8,12 +8,14 @@ import "./assets/styles.css";
 // Application Modules
 import AppComponent from './app.component';
 import Components from './components';
+import Common from './common';
 
 const app = angular
     .module('app', [
         uiRouter,
         // Application Modules
         Components,
+        Common,
     ])
     .component('app', AppComponent)
     .name;
