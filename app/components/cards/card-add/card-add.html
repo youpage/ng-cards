@@ -1,0 +1,25 @@
+<div class="card-add layout-column flex-none full-h">
+    <form>
+        <div class="form-group"><label>Picture</label> <input type="file" name="pic" accept="image/*"></div>
+        <div class="form-group"><label>Name</label> <input type="text" ng-model="$ctrl.card.name"></div>
+        <div class="form-group"><label>Username</label> <input type="text" ng-model="$ctrl.card.username"></div>
+        <div class="form-group"><label>Email</label> <input type="email" ng-model="$ctrl.card.email" class="form-control"></div>
+        <div class="form-group"><label>Company</label> <input type="text" ng-model="$ctrl.card.company.name"></div>
+        <div class="form-group"><label>Phone</label> <input type="text" ng-model="$ctrl.card.phone"></div>
+        <div class="form-group"><label>Street</label> <input type="text" ng-model="$ctrl.card.address.street"></div>
+        <div class="form-group"><label>City</label> <input type="text" ng-model="$ctrl.card.address.city"> </div>
+        <div class="form-group"><label>Suite</label> <input type="text" ng-model="$ctrl.card.address.suite"></div>
+        <div class="form-group"><label>Zip</label> <input type="text" ng-model="$ctrl.card.address.zipcode"></div>
+        <div class="layout-row align-spread">
+            <button class="btn btn-outline-warning btn-sm" ng-click="$ctrl.goBack();">
+                {{'BACK' | translate}}
+            </button>
+            <button class="btn btn-outline-info btn-sm" ng-click="$ctrl.addUser($ctrl.card)">
+                {{'ADD' | translate}}
+            </button>
+        </div>
+    </form>
+
+    Card Add
+    <pre>{{$ctrl.card|json}}</pre>
+</div>

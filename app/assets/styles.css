@@ -78,6 +78,45 @@ address {
     margin: 0;
 }
 
+input[type=text] {
+    max-width: 160px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: 21px;
+    font-size: small;
+}
+
+form {
+    max-height: 21px;
+    border: none;
+    margin: 0 .5em;
+}
+
+.form-group {
+    margin-bottom: .5em;
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+}
+
+.form-group input {
+    max-width: 100%;
+}
+
+.card-add {
+    align-items: center;
+    margin-top: 4em;
+}
+
+.card-add form {
+    max-height: inherit;
+}
+
+.card-add pre {
+    width: 100%;
+}
+
 .in-filter {
     width: 200px;
     color: #444;
@@ -90,6 +129,25 @@ address {
     position: fixed;
     right: 0;
     margin: 1.5em;
+}
+
+#details{
+    position: fixed;    
+    background: rgba(255,255,255,.9);
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    width: 100%;
+    transform: translateX(0);
+    transform-style: preserve-3d;
+    transition-delay: 0.1s;
+    transition-duration: 0.2s;
+    transition-property: transform, left;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#details.active{    
+    left: 0;
 }
 
 /* Flex */

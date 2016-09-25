@@ -13,10 +13,27 @@
         {{ $ctrl.card.phone }}
       </div>
     </div>
+    <div ng-if="$ctrl.details">
+      <img width="225" ng-src="{{$ctrl.map}}" />      
+      <address class="txt-right">
+        <span>{{'ADDRESS' | translate}}:</span>
+        <a class="email" ng-href="mailto:{{$ctrl.card.email}}">{{$ctrl.card.email}}</a><br>
+        {{ $ctrl.address.street }}<br>
+        {{ $ctrl.address.suite }}<br>
+        {{ $ctrl.address.city }}<br>
+        {{ $ctrl.address.zip }}<br>
+      </address>      
+    </div>
   </div>
   <div class="layout-row align-spread">
-    <button class="btn btn-outline-warning btn-sm" ng-click="$ctrl.deleteCard();">
+    <button ng-if="!$ctrl.details" class="btn btn-outline-warning btn-sm" ng-click="$ctrl.deleteCard();">
       {{'DELETE' | translate}}
-    </button> 
+    </button>    
+    <button ng-if="$ctrl.details" class="btn btn-outline-warning btn-sm" ng-click="$ctrl.goBack();">
+      {{'BACK' | translate}}
+    </button>
+    <button ng-if="!$ctrl.details" class="btn btn-outline-info btn-sm" ui-sref="cards.details({ cardId: $ctrl.card.id })">
+      {{'DETAILS' | translate}}
+    </button>
   </div>
 </div>
