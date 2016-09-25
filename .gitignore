@@ -1,6 +1,7 @@
 # App
 node_modules/
 dist/*
+npm-debug.log.*
 
 # Windows image file caches
 Thumbs.db

@@ -7,12 +7,12 @@
     
     <div ng-class="{active: $ctrl._$state.params.details}" id="details" ui-view></div>
     <div class="card-list layout-row">
-        <card ng-repeat="card in $ctrl.cards | filter:filterAny"
+        <card ng-repeat="card in $ctrl.filteredCards | filter:filterAny"
             card="card" details="false"
             on-delete="$ctrl.deleteCard($event);">
         </card>
     </div>
-    <div class="card__empty" ng-if="!$ctrl.cards.length">
+    <div class="card__empty" ng-if="!$ctrl.filteredCards.length">
         <i class="fa fa-face"></i> Nothing found...
     </div>
     List of cards

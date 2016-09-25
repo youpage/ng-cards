@@ -1,9 +1,10 @@
 class CardsController {
-    constructor(DataService, $state, $window, ImagePreloader ) {
+    constructor(DataService, $state, $window, ImagePreloader, $filter ) {
         this._dataService = DataService;        
         this._$state = $state;
         this._$window = $window;
         this._preloader = ImagePreloader;
+        this._$filter = $filter;
 
         this.cards = this.cardsData;
 
@@ -16,7 +17,7 @@ class CardsController {
     }
 
     $onInit() {       
-                
+        this.filteredCards = this._$filter('CardsFilter')(this.cards, this.filter);   
     }
 
     deleteCard(event) {
@@ -30,6 +31,6 @@ class CardsController {
     
 }
 
-CardsController.$inject = ['DataService', '$state', '$window', 'ImagePreloader'];
+CardsController.$inject = ['DataService', '$state', '$window', 'ImagePreloader', '$filter'];
 
 export default CardsController;

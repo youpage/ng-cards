@@ -4,8 +4,10 @@ import CardsComponent from './cards.component';
 import Card from './card';
 import CardDetails from './card-details';
 import CardAdd from './card-add';
+
 import DataService from '../../shared/data.service';
 import ImagePreloader from '../../shared/image.preloader';
+import CardsFilter from './cards.filter';
 
 const cards = angular
     .module('cards', [
@@ -13,22 +15,28 @@ const cards = angular
         // list the components that module depends on    
         Card,
         CardDetails,
-        CardAdd    
+        CardAdd
     ])
     .component('cards', CardsComponent)
     .service('DataService', DataService)
     .service('ImagePreloader', ImagePreloader)
+    .filter('CardsFilter', () => CardsFilter.cFilterFactory)
     .config(($stateProvider, $urlRouterProvider) => {
         $stateProvider
             .state('cards', {
-                url: '/cards',
+                url: '/cards?filter',
                 component: 'cards',
                 params: {
                     details: false,
+                    filter: {
+                        value: 'none'
+                    }
                 },
                 resolve: {
                     cardsData: (DataService) =>
-                        DataService.getData('')
+                        DataService.getData(''),
+                    filter: ($transition$) =>
+                        $transition$.params()
                 },
             })
             .state('cards.new', {

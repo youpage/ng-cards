@@ -5,7 +5,8 @@ const CardsComponent = {
     restrict: 'E',
     bindings: {
         cardsData: '<',        
-        details: '<'
+        details: '<',
+        filter: '<',
     },
     templateUrl,
     controller

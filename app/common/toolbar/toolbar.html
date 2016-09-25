@@ -1,2 +1,10 @@
 <navigation class="flex-noshrink"></navigation>
+<form name="toolbar-filter" class="flex-noshrink">
+    <label for="filter">{{ 'FILTER_CTY' | translate }}:</label>
+    <select name="city"
+        ng-model="$ctrl.cities.selected"
+        ng-change="$ctrl.changeCity()"
+        ng-options="option.name for option in $ctrl.cities.options track by option.id">
+    </select>
+</form>
 <language class="flex-noshrink txt-right" lang="$ctrl.lang"> </language>
