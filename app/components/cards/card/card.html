@@ -1,0 +1,22 @@
+<div class="card box-shadow-4">
+  <div class="layout-row align-spread">
+    <div>
+      <img width="225" ng-src="http://lorempixel.com/225/150/people/{{$ctrl.card.id}}" />
+      <div class="name">
+        {{ $ctrl.card.name }}
+      </div>      
+      <a class="email" ng-href="http://{{$ctrl.card.website}}" target="_blank">{{ $ctrl.card.website }}</a>      
+      <div class="company txt-center">
+        {{ $ctrl.card.company.name }}
+      </div>
+      <div class="txt-center">
+        {{ $ctrl.card.phone }}
+      </div>
+    </div>
+  </div>
+  <div class="layout-row align-spread">
+    <button class="btn btn-outline-warning btn-sm" ng-click="$ctrl.deleteCard();">
+      {{'DELETE' | translate}}
+    </button> 
+  </div>
+</div>

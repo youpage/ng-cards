@@ -1,5 +1,20 @@
 <div class="layout-column flex-none full-h">
-
+    <input placeholder="{{ 'FILTER_ANY'|translate }}..." class="in-filter form-control " ng-model="filterAny" autocomplete="off " type="text " focus>    
+    
+    <button class="btn btn-info btn-sm in-button" >
+        {{'ADD' | translate}}
+    </button>
+    
+    <div ng-class="{active: $ctrl._$state.params.details}" id="details" ui-view></div>
+    <div class="card-list layout-row">
+        <card ng-repeat="card in $ctrl.cards | filter:filterAny"
+            card="card" details="false"
+            on-delete="$ctrl.deleteCard($event);">
+        </card>
+    </div>
+    <div class="card__empty" ng-if="!$ctrl.cards.length">
+        <i class="fa fa-face"></i> Nothing found...
+    </div>
     List of cards
 
     <pre>{{$ctrl.cardsData|json}}</pre>

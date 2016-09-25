@@ -23,12 +23,45 @@ select {
     border: none;
 }
 
+.card-list {
+    flex-wrap: wrap;    
+    margin: 2em 0 0;
+    width: 100%;
+    min-height: 448px;    
+    padding: 8px 8px 32px 8px;
+    justify-content: center;
+}
+
+.card {    
+    margin: 25px;
+    padding: 8px;
+}
+
+.name {
+    font-size: large;
+    font-weight: 600;
+}
+
 .txt-center{
     text-align: center;
 }
 
 .txt-right{
     text-align: right;
+}
+
+.email {
+    font-style: italic;
+    text-transform: lowercase;
+    color: inherit;
+}
+
+address {
+    margin: 0;
+}
+
+.company {    
+    color: rgb(11, 169, 83);
 }
 
 .toolbar {    
@@ -45,6 +78,19 @@ select {
     margin: 0;
 }
 
+.in-filter {
+    width: 200px;
+    color: #444;
+    position: fixed;
+    background: rgba(255,255,255,.5);
+    margin: 1em;
+}
+
+.in-button{
+    position: fixed;
+    right: 0;
+    margin: 1.5em;
+}
 
 /* Flex */
 .flex {
@@ -186,6 +232,44 @@ select {
 .scroll-x {
     overflow-y: hidden;
     overflow-x: auto;
+}
+
+/*buttons*/
+.btn-outline-info {
+    color: #5bc0de;
+    background-image: none;
+    background-color: transparent;
+    border-color: #5bc0de;
+}
+.btn-info, .btn-outline-info:hover {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+}
+
+.btn-info:hover {
+    color: #fff;
+    background-color: #31b0d5;
+    border-color: #2aabd2;
+}
+
+.btn-sm {
+    padding: .25rem .5rem;
+    font-size: 1.2rem;
+    border-radius: .2rem;
+}
+
+.btn-outline-warning {
+    color: #f0ad4e;
+    background-image: none;
+    background-color: transparent;
+    border-color: #f0ad4e;
+}
+
+.btn-outline-warning:hover {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
 }
 
 .shadow-glow-z1{

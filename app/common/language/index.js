@@ -13,9 +13,12 @@ const language = angular
             BACK: 'Back',
             LANGUAGE: 'Language',
             FILTER: 'Filter',
+            FILTER_ANY: 'Filter by any',
+            FILTER_CTY: 'Find by city',
             HOME: 'Home',
             CARDS: 'Cards',
             CONTACTS: 'Contacts',
+            ADDRESS: 'Address'
         });
         $translateProvider.translations('FR', {
             DETAILS: 'Détails',
@@ -24,9 +27,12 @@ const language = angular
             BACK: 'Derrière',
             LANGUAGE: 'Langue',
             FILTER: 'Filtre',
+            FILTER_ANY: 'Filtrer par toute',
+            FILTER_CTY: 'Trouver par ville',
             HOME: 'Maison',
             CARDS: 'Cartes',
             CONTACTS: 'Contacts',
+            ADDRESS: 'Adresse'
         });
         $translateProvider.translations('RO', {
             DETAILS: 'Detalii',
@@ -35,9 +41,12 @@ const language = angular
             BACK: 'Inapoi',
             LANGUAGE: 'Limba',
             FILTER: 'Filtrare',
+            FILTER_ANY: 'Filtare dupa orice',
+            FILTER_CTY: 'Cauta dupa oras',
             HOME: 'Acasa',
             CARDS: 'Carti',
             CONTACTS: 'Contacts',
+            ADDRESS: 'Adresa'
         });
         $translateProvider.preferredLanguage('EN');
         $translateProvider.useSanitizeValueStrategy('escape');

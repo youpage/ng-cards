@@ -1,12 +1,14 @@
 import uiRouter from 'angular-ui-router';
 // import the components that module depends on
 import CardsComponent from './cards.component';
+import Card from './card';
 import DataService from '../../shared/data.service';
 
 const cards = angular
     .module('cards', [
         uiRouter,
-        // list the components that module depends on        
+        // list the components that module depends on    
+        Card,    
     ])
     .component('cards', CardsComponent)
     .service('DataService', DataService)
