@@ -1,8 +1,10 @@
+import controller from './toolbar.controller';
 import templateUrl from './toolbar.html';
 
 const ToolbarComponent = {
   restrict: 'E',
-  templateUrl,  
+  templateUrl,
+  controller
 };
 
 export default ToolbarComponent;

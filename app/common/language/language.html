@@ -1,0 +1,8 @@
+<form name="toolbar-language">
+    <label for="lang">{{'LANGUAGE' | translate}}:</label>
+    <select name="lang"
+        ng-model="$ctrl.lang.selected"
+        ng-change="$ctrl.changeLang()"
+        ng-options="option.name for option in $ctrl.lang.options track by option.id">
+    </select>
+</form>
