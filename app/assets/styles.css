@@ -1,0 +1,143 @@
+
+
+/* Flex */
+.flex {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.flex-none {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+.flex-grow {
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+}
+
+.flex-auto {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+}
+
+.flex-nogrow,
+.flex-initial {
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+}
+
+.flex-noshrink {
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+
+.flex-shrink {    
+    -webkit-flex: 1 1 0%;
+    -ms-flex: 1 1 0%;
+    flex: 1 1 0%;
+}
+.flex,
+.flex-none,
+.flex-auto,
+.flex-grow,
+.flex-nogrow,
+.flex-initial,
+.flex-shrink,
+.flex-noshrink {
+    box-sizing: border-box;
+}
+
+[layout]>* {
+    min-height: auto;
+    min-height: initial;
+}
+
+.layout,
+.layout-column,
+.layout-row {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.layout-column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.layout-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.layout-column>.flex {
+    min-height: 0;
+}
+
+.layout-row>.flex {
+    min-width: 0;
+}
+
+.row-center { 
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.column-center {
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+}
+
+.align-left{
+    justify-content: flex-start;
+        align-items: flex-start;
+}
+
+.align-right{
+    justify-content: flex-end;
+        align-items: flex-end;
+}
+
+.align-spread{
+    justify-content: space-between;
+}
+
+.full-h{
+    height: 100%;
+}
+
+.full-w{
+    width: 100%;
+}
+
+.scroll-y {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.scroll-x {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
