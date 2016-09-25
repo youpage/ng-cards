@@ -1,10 +1,18 @@
 class CardsController {
-    constructor(DataService, $state, $window ) {
+    constructor(DataService, $state, $window, ImagePreloader ) {
         this._dataService = DataService;        
         this._$state = $state;
         this._$window = $window;
+        this._preloader = ImagePreloader;
 
         this.cards = this.cardsData;
+
+        this.images = [];
+        this.cards.forEach((card) => {
+            this.images[this.images.length] = `http://lorempixel.com/225/150/people/${card.id}`;
+        }, this);
+
+        this._preloader.preloadImages( this.images );
     }
 
     $onInit() {       
@@ -22,6 +30,6 @@ class CardsController {
     
 }
 
-CardsController.$inject = ['DataService', '$state', '$window'];
+CardsController.$inject = ['DataService', '$state', '$window', 'ImagePreloader'];
 
 export default CardsController;

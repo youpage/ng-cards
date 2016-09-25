@@ -4,6 +4,7 @@ import uiRouter from 'angular-ui-router';
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 import "./assets/styles.css";
+import "./assets/favicon.ico";
 
 // Application Modules
 import AppComponent from './app.component';

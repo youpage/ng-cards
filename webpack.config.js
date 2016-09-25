@@ -19,30 +19,33 @@ module.exports = {
             test: /\.html$/,
             loader: "file-loader?name=templates/[name].html"
         }, {
-            test: /\.(png|jpg)$/,
-            loader: "file-loader?name=img/[name].[ext]" // inline base64 URLs for <=10kb images, direct URLs for the rest
-        }, {
-            test: /\.css$/,
-            loaders: ["style-loader", "css-loader"]
-        },  {
-            test: /\.less$/,
-            loaders: ["style-loader", "css-loader", "less-loader"]
-        }, {
-            test: /\.(es6|js)$/,
-            exclude: /(node_modules)/,
-            loaders: ["ng-annotate?add=true", "babel-loader"]
-        },
+                test: /\.(png|jpg)$/,
+                loader: "file-loader?name=img/[name].[ext]" // inline base64 URLs for <=10kb images, direct URLs for the rest
+            }, {
+                test: /\.css$/,
+                loaders: ["style-loader", "css-loader"]
+            }, {
+                test: /\.less$/,
+                loaders: ["style-loader", "css-loader", "less-loader"]
+            }, {
+                test: /\.(es6|js)$/,
+                exclude: /(node_modules)/,
+                loaders: ["ng-annotate?add=true", "babel-loader"]
+            }, {
+                test: /\.ico$/,
+                loader: 'file?name=[name].[ext]'
+            },
 
-        // For Bootstrap
-        { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
-        { test: /\.(woff|woff2)$/, loader:"url?prefix=font/&limit=5000" },
-        { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
-        { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
+            // For Bootstrap
+            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
+            { test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },
+            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
+            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
 
-        {
-            test: [/fontawesome-webfont\.svg/, /fontawesome-webfont\.eot/, /fontawesome-webfont\.ttf/, /fontawesome-webfont\.woff/, /fontawesome-webfont\.woff2/],
-            loader: "file-loader?name=fonts/[name].[ext]"
-        }]
+            {
+                test: [/fontawesome-webfont\.svg/, /fontawesome-webfont\.eot/, /fontawesome-webfont\.ttf/, /fontawesome-webfont\.woff/, /fontawesome-webfont\.woff2/],
+                loader: "file-loader?name=fonts/[name].[ext]"
+            }]
     },
     plugins: [
         new HtmlWebpackPlugin({

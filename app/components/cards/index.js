@@ -5,6 +5,7 @@ import Card from './card';
 import CardDetails from './card-details';
 import CardAdd from './card-add';
 import DataService from '../../shared/data.service';
+import ImagePreloader from '../../shared/image.preloader';
 
 const cards = angular
     .module('cards', [
@@ -16,6 +17,7 @@ const cards = angular
     ])
     .component('cards', CardsComponent)
     .service('DataService', DataService)
+    .service('ImagePreloader', ImagePreloader)
     .config(($stateProvider, $urlRouterProvider) => {
         $stateProvider
             .state('cards', {
